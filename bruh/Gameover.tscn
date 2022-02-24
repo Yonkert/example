@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://playagainbutton.gd" type="Script" id=1]
+[ext_resource path="res://fonts/semyon-soviet/Semyon Soviet/Semyon Soviet.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/rich-eatin/Rich Eatin'.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_color = Color( 0.662745, 0.254902, 0.254902, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 2 )
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.0823529, 0.180392, 0.0156863, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1280.0
+margin_bottom = 360.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.976471, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.380392, 0.0705882, 0.0705882, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 20
+custom_constants/shadow_offset_y = -20
+text = "Game oveR"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="playagainbutton" type="Button" parent="."]
+margin_left = 541.135
+margin_top = 390.401
+margin_right = 794.135
+margin_bottom = 496.401
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0.929412, 0.0941176, 0.0941176, 1 )
+custom_colors/font_color = Color( 0.898039, 0.227451, 0.227451, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.0980392, 0.878431, 1 )
+custom_colors/font_color_pressed = Color( 0.952941, 0.0784314, 0.898039, 1 )
+text = "Try Again?"
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="playagainbutton" to="playagainbutton" method="_on_playagainbutton_pressed"]
